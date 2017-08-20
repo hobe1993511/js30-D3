@@ -9,12 +9,9 @@
    
    <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
    
-   <div class =" control">
-       <label for="size">Rotate:</label>
-       <input id="deg" type="range" name="deg" min="0" max="360" value="180" data-deg="deg" >
-    </div>
-    
     <div class = "youcandecide">
+       <label for="size">Rotate:</label>
+       <input id="deg" type="range" name="deg" min="0" max="360" value="180" data-sizing="deg" >
        <label for="blur">Blur:</label>
        <input id="blur" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
        <label for="base">Base Color</label>
@@ -56,7 +53,6 @@
        
        .youcandecide {
            margin-bottom: 60px;
-           display: inline-block;
        }
        
        img {
@@ -69,28 +65,14 @@
           width:100px;
         }
       
-       .control {
-           display: inline-block;
-           margin-bottom: 60px;
-       }
+
     
     </style>
     
     <script>
         
     const inputs = document.querySelectorAll(' .youcandecide input ');
-    const inputs1 = document.querySelectorAll(' .control input ');
-        
-        function handsupdate1(){
-            
-            const unit = this.dataset.deg || '';
-            document.documentElement.style.setProperty(`--${this.name}`, this.value + unit);
-            
-        }
-        
-            inputs1.forEach(input => input.addEventListener('change', handsupdate1));
-            inputs1.forEach(input => input.addEventListener('mousemove', handsupdate1));
-        
+
         
         function handsupdate(){
             
